@@ -33,6 +33,7 @@ const Discover = () => {
                 {data?.map((song, i) => (
                     <SongCard
                         key={song.key}
+                        song={song}
                         i={i}
                     />
                 ))}
