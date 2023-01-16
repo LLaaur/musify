@@ -3,9 +3,16 @@ import { useDispatch } from "react-redux";
 import PlayPause from "./PlayPause";
 import { playPause, setActiveSong } from "../redux/features/playerSlice";
 
-const SongCard = ({ song, i }) => {
+const SongCard = ({ song, isPlaying, activeSong, i }) => {
 
-  const activeSong = 'test';
+
+  const handlePauseClick = () => {
+
+  }
+
+  const handlePlayClick = () => {
+
+  }
 
   return (
 
@@ -13,11 +20,31 @@ const SongCard = ({ song, i }) => {
       <div className="relative w-full h-56 group">
         <div className={`absolute inset-0 justify-center items-center bg-black bg-opacity-50 group-hover:flex ${activeSong?.title === song.title ? 'flex bg-black bg-opacity-70' : 'hidden'}`}>
 
-          <PlayPause />
+          <PlayPause 
+            song = {song}
+            handlePause = {handlePauseClick}
+            handlePlay = {handlePlayClick}
+            isPlaying = {isPlaying}
+            activeSong = {activeSong}
+          />
 
         </div>
         <img src={song.images?.coverart} alt='song img' />
       </div>
+
+      <div className="mt-4 flex flex-col">
+        <p className="text-white  font-semibold text-lg truncate">
+          <Link to={`/songs/${song.key}`}>
+            {song.title}
+          </Link>
+        </p>
+        <p className= "text-gray-300 mt-1 text-sm">
+          <Link to={song.artists ? `/artists/${song?.artists[0]?.adamid}` : 'top artists'}>
+            {song.subtitle}
+          </Link>
+        </p>
+      </div>
+
     </div>
 
   );
