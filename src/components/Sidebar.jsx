@@ -6,6 +6,9 @@ import { links } from '../assets/constants'
 import { HiOutlineMenu } from 'react-icons/hi';
 
 import { logo } from '../assets';
+import { Link } from "react-router-dom";
+import { Discover, TopCharts } from '../pages';
+import { Route, Routes } from 'react-router-dom';
 
 const NavLinks = ({handleClick}) => {
 
@@ -35,7 +38,9 @@ const Sidebar = () => {
     <>
 
       <div className='md:flex hidden flex-col w-[240px] py-10 px-4 bg-[#1d192c]'>
-        <img src={logo} alt="logo" className='w-full object-contain' />
+        <Link to={'/'}>
+        <img src={logo} alt="logo" className='w-full object-contain cursor-pointer'/>
+        </Link>
         <NavLinks />
       </div>
 
