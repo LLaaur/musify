@@ -18,4 +18,4 @@ VI. Tailwind CSS
 
 ![musifyss](https://user-images.githubusercontent.com/102544514/214060496-f5441642-48d1-45b7-b4ef-7087d5980fe4.png)
 
-👉 <a link href = 'laurmusify.netlify.app/' /> Live Demo </a>
+👉 <a link href = 'https://laurmusify.netlify.app' /> Live Demo </a>
