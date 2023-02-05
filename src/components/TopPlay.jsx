@@ -27,9 +27,8 @@ const TopChartCard = ({song, i, isPlaying, activeSong, handlePauseClick, handleP
             <p className="text-xl font-bold text-white">{song?.title}</p>
           </Link>
 
-          <Link to={`/artists/${song?.artists[0].adamid}`}>
             <p className="text-base font-bold text-gray-300 mt-1">{song?.subtitle}</p>
-          </Link>
+
 
         </div>
 
@@ -101,48 +100,7 @@ const TopPlay = () => {
 
       </div>
 
-      <div className="w-full flex flex-col">
-
-        <div className="flex flex-row justify-between items-center">
-
-          <h2 className="text-white font-bold text-2xl">Top Artists</h2>
-          <Link to={'/top-artists'}>
-            <p className="text-white text-lg cursor-pointer font-medium">See more</p>
-          </Link>
-
-        </div>
-
-            <Swiper
-              slidesPerView="auto"
-              spaceBetween={15}
-              freeMode
-              centeredSlides
-              centeredSlidesBounds
-              modules={[FreeMode]}
-              className="mt-4"
-            >
-              {topPlays?.map((song, i) => (
-                <SwiperSlide
-                  key={song.key}
-                  i={i}
-                  style={{width: '25%', height: 'auto'}}
-                  className="shadow-lg rounded-full animate-slider-right"
-                >
-
-                  <Link to={`/artists/${song?.artists[0].adamid}`}>
-                    <img src={song?.images.background} alt="name"  className="rounded-full object-cover w-full"/>
-                  </Link>
-
-                </SwiperSlide>
-              ))}
-            </Swiper>
-
-      </div>
-
-
-
     </div>
-
   )
 
 }
